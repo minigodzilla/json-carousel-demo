@@ -5,7 +5,7 @@ $(function()
 	// {
 	// 	var showData = $('#show-data');
 
-	// 	$.getJSON('https://storage.cloud.google.com/ritualtest/ritualRestaurantList.json', function (data) {
+	// 	$.getJSON('/data/ritualRestaurantList.json', function (data) {
 	// 		console.log(data);
 
 	// 		var items = data.items.map(function (item) {
@@ -15,9 +15,9 @@ $(function()
 	// 	showData.empty();
 
 	// 	if (items.length) {
-	// 	var content = '<li>' + items.join('</li><li>') + '</li>';
-	// 	var list = $('<ul />').html(content);
-	// 	showData.append(list);
+	// 		var content = '<li>' + items.join('</li><li>') + '</li>';
+	// 		var list = $('<ul />').html(content);
+	// 		showData.append(list);
 	// 	}
 	// 	});
 
@@ -26,46 +26,97 @@ $(function()
 
 	// getJSON();
 
+	// owl carousel
 
+	$('.owl-carousel').owlCarousel(
+	{
+		navText: '',
+		responsive: {
+			0: {
+				items: 1,
+				margin: 16,
+				stagePadding: 16
+			},
+			576: {
+				items: 2,
+				nav: true,
+				margin: 16
+			},
+			768: {
+				items: 3,
+				nav: true,
+				margin: 16
+			},
+			1200: {
+				items: 3,
+				nav: true,
+				margin: 32
+			}
+		}
+	});
 
-	// var promise = $.getJSON('https://storage.cloud.google.com/ritualtest/ritualRestaurantList.json?callback=?');
-	// var container = $('#show-data');
+	// form validation on a simulated submit action
 
-	// promise.done(function(data) {
-	// 	console.log(data);
-	// 	container.html(data.text);
-	// });
+	const $form = $('form');
+	const $inputs = $form.find ('.text-field, .tel-field');
+	const $email  = $form.find ('.email-field');
 
-	// promise.fail(function() {
-	// 	container.html('<p>Oh no, something went wrong!</p>');
-	// });
+	$inputs.blur (function()
+	{
+		if (!$(this).val())
+		{
+			$(this).removeClass ('is-valid').addClass ('is-invalid');
+		}
 
+		else
+		{
+			$(this).removeClass ('is-invalid').addClass ('is-valid');
+		}
+	});
 
+	$email.blur (function()
+	{
+		var emailValue = $email.val();
 
-	// function getJSON()
-	// {
-	// 	var container = $('#show-data');
+		if(emailValue.indexOf('@')>-1) {
+			$(this).removeClass ('is-invalid').addClass ('is-valid');
+		}
 
-	// 	$.ajax({
-	// 		url: 'https://storage.cloud.google.com/ritualtest/ritualRestaurantList.json',
-	// 		dataType: 'jsonp',
-	// 		success: function(data) {
-	// 			console.log(data);
-	// 			container.html(data.text);
-	// 		},
-	// 		error: function() {
-	// 			container.html('<p>Oh no, something went wrong!</p>');
-	// 		}
-	// 	});
-	// }
+		else
+		{
+			$(this).removeClass ('is-valid').addClass ('is-invalid');
+			errors
+		}
+	});
 
-	// getJSON();
+	$form.submit (function()
+	{
+		$inputs.each (function()
+		{
+			if (!$(this).val())
+			{
+				$(this).removeClass ('is-valid').addClass ('is-invalid');
+			}
 
-	var remote = require('remote-json');
+			else
+			{
+				$(this).removeClass ('is-invalid').addClass ('is-valid');
+			}
+		});
 
-	remote('http://echo.jsontest.com/key/value/name/Bob').get(function (err, res, body) {
-			console.log(res.statusCode); // 200
-			console.log(body); // {"name": "Bob", "key": "value"}
+		var emailValue = $email.val();
+
+		if(emailValue.indexOf('@')>-1) {
+			$(this).removeClass ('is-invalid').addClass ('is-valid');
+		}
+
+		else
+		{
+			$(this).removeClass ('is-valid').addClass ('is-invalid');
+			errors
+		}
+
+		return false; // we don't submit the form in any case
 	});
 
 });

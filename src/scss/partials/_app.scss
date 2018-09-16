@@ -1,4 +1,254 @@
 body
 {
 	background: $white;
+	font-family: 'helvetica neue',sans-serif;
+}
+
+// input styles
+
+
+.btn
+{
+	display: inline-block;
+	height: 3rem;
+	line-height: 3rem;
+	border-radius: 1.5rem;
+	padding: 0 2rem;
+	font-size: 16px;
+	font-weight: 500;
+	text-transform: uppercase;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+
+header
+{
+	overflow: hidden;
+	position: relative;
+	height: 540px;
+	background-image: 	url("/assets/img/header-bg.svg"),
+						url("/assets/img/hero.jpg");
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background-image: 	url("/assets/img/header-bg.svg"),
+							url("/assets/img/hero@2x.jpg");
+	}
+
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+
+	h1
+	{
+		overflow: hidden;
+		margin-top: 4.5rem;
+		width: 156px;
+		height: 26px;
+		text-indent: 100%;
+		white-space: nowrap;
+		background-image: url("/assets/img/ritual-logo.svg");
+		background-repeat: no-repeat;
+	}
+
+	h2
+	{
+		color: $white;
+		font-weight: 100;
+		font-size: 16px;
+		margin-top: 4.5rem;
+
+		.tagline-1
+		{
+			font-size: 20px;
+			margin-bottom: 0.5rem;
+		}
+
+		.tagline-2
+		{
+			font-size: 40px;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.btn
+	{
+		margin-top: 1rem;
+		background-color: $white;
+		color: $brand-color;
+	}
+}
+
+nav
+{
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	line-height: 2rem;
+
+	// ** Note about nesting practices in SASS **
+	//
+	// Some developers are dead-set against nesting SASS rules more than
+	// 3 or 4 levels deep.
+	//
+	// In my current role, our team knows our naming conventions well,
+	// and SASS files are structured so that they are easy to read and
+	// comprehend even 6 or 7 levels deep. Personally, I don't think it is
+	// that big of a deal, if the SASS is well-structured.
+	//
+	// I actually think that nesting and de-nesting can both be taken to
+	// unreasonable extremes and the best and most comprehensible approach is
+	// a hybrid (ex: a soft limit around 5 levels, additional levels being
+	// allowed in particular cases, such as unordered lists, uneditable HTML
+	// etc)
+	//
+	// I've decided here to construct the nav style rules with a bare minimum
+	// of nesting, to show that I can adapt to whatever convention is agreed
+	// upon by the team.
+	//
+	// If practices like this are open to discussion on your team (and I hope
+	// they are!) it's a healthy debate that I would not shy away from :)
+	//
+	// - SD
+
+	ul
+	{
+		display: flex;
+		list-style: none;
+		padding: 0;
+
+		li
+		{
+			margin-left: 1rem;
+		}
+	}
+
+	a,
+	a:hover
+	{
+		display: flex;
+		color: $white;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	li.user
+	{
+		margin-left: 3rem;
+	}
+
+	.user-name
+	{
+		font-style: italic;
+		font-weight: normal;
+		text-transform: none;
+	}
+
+	.user-avatar
+	{
+		margin-left: 0.5rem;
+
+		img
+		{
+			width: 2rem;
+			height: 2rem;
+			border-radius: 1rem;
+		}
+	}
+}
+
+.main
+{
+	.owl-carousel
+	{
+		padding: 0 2em;
+
+		.item
+		{
+			position: relative;
+			height: 15rem;
+			background-position: 50% 50%;
+			background-size: cover;
+
+			&::before
+			{
+				content: "";
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $black;
+				opacity: 0.2;
+			}
+
+			.restaurant-details
+			{
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				.restaurant-name
+				{
+					font-size: 24px;
+					font-weight: bold;
+					color: $white;
+				}
+
+				.restaurant-type
+				{
+					font-size: 12px;
+					color: $white;
+				}
+
+				.btn
+				{
+					font-size: 12px;
+					color: $white;
+					border: 2px solid $white;
+					height: 2rem;
+					line-height: 2rem;
+					border-radius: 1rem;
+					margin-top: 0.5rem;
+				}
+			}
+		}
+
+		.owl-nav button
+		{
+			background-color: $brand-color;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -2.5rem;
+			width: 3rem;
+			height: 3rem;
+			border-radius: 1.5rem;
+			color: $white;
+			outline: none !important;
+
+			&.owl-prev
+			{
+				left: -2rem;
+				background-image: url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><polygon fill='#FFFFFF' points='30,15 30,33 14,24 '/></svg>");
+			}
+
+			&.owl-next
+			{
+				right: -2rem;
+				background-image: url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><polygon fill='#FFFFFF' points='16,15 16,33 32,24 '/></svg>");
+			}
+		}
+	}
 }
