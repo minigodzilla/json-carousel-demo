@@ -6,6 +6,8 @@
  * @version 1.0.0
  * Copyright 2018. ISC licensed.
  */
+// get json and append it to the carousel
+
 $(function()
 {
 
@@ -33,9 +35,13 @@ $(function()
 	// }
 
 	// getJSON();
+});
 
-	// owl carousel
 
+// owl carousel
+
+$(function()
+{
 	$('.owl-carousel').owlCarousel(
 	{
 		navText: '',
@@ -73,12 +79,12 @@ $(function()
 	{
 		if (!$(this).val())
 		{
-			$(this).removeClass ('is-valid').addClass ('is-invalid');
+			$(this).removeClass('is-valid').addClass('is-invalid');
 		}
 
 		else
 		{
-			$(this).removeClass ('is-invalid').addClass ('is-valid');
+			$(this).removeClass('is-invalid').addClass('is-valid');
 		}
 	});
 
@@ -87,13 +93,12 @@ $(function()
 		var emailValue = $email.val();
 
 		if(emailValue.indexOf('@')>-1) {
-			$(this).removeClass ('is-invalid').addClass ('is-valid');
+			$(this).removeClass('is-invalid').addClass('is-valid');
 		}
 
 		else
 		{
-			$(this).removeClass ('is-valid').addClass ('is-invalid');
-			errors
+			$(this).removeClass('is-valid').addClass('is-invalid');
 		}
 	});
 
@@ -103,25 +108,24 @@ $(function()
 		{
 			if (!$(this).val())
 			{
-				$(this).removeClass ('is-valid').addClass ('is-invalid');
+				$(this).removeClass('is-valid').addClass('is-invalid');
 			}
 
 			else
 			{
-				$(this).removeClass ('is-invalid').addClass ('is-valid');
+				$(this).removeClass('is-invalid').addClass('is-valid');
 			}
 		});
 
 		var emailValue = $email.val();
 
 		if(emailValue.indexOf('@')>-1) {
-			$(this).removeClass ('is-invalid').addClass ('is-valid');
+			$email.removeClass('is-invalid').addClass('is-valid');
 		}
 
 		else
 		{
-			$(this).removeClass ('is-valid').addClass ('is-invalid');
-			errors
+			$email.removeClass('is-valid').addClass('is-invalid');
 		}
 
 		return false; // we don't submit the form in any case
