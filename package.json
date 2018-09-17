@@ -1,21 +1,8 @@
 {
   "name": "json-carousel-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://minigodzilla@github.com/minigodzilla/json-carousel-demo.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/minigodzilla/json-carousel-demo/issues"
-  },
-  "homepage": "https://github.com/minigodzilla/json-carousel-demo#readme",
+  "description": "Ritual Carousel Demo assignment",
+  "author": "Steve Diabo",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",

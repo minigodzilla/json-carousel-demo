@@ -167,6 +167,17 @@ nav
 	{
 		margin: 6rem 0;
 		text-align: center;
+
+		.btn
+		{
+			color: $white;
+		}
+	}
+
+	.error
+	{
+		text-align: center;
+		color: $lightgray;
 	}
 
 	.owl-carousel
@@ -180,19 +191,6 @@ nav
 			background-position: 50% 50%;
 			background-size: cover;
 
-			&::before
-			{
-				content: "";
-				position: absolute;
-				z-index: 0;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: $black;
-				opacity: 0.2;
-			}
-
 			.restaurant-details
 			{
 				position: absolute;
@@ -205,17 +203,26 @@ nav
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				background-color: $overlay-black;
+				opacity: 0;
+				transition: opacity 200ms ease;
 
 				.restaurant-name
 				{
-					font-size: 24px;
+					margin: 0 1rem;
+					font-size: 22px;
+					line-height: 26px;
+					padding: 0.25rem 0;
 					font-weight: bold;
+					text-align: center;
 					color: $white;
 				}
 
 				.restaurant-type
 				{
-					font-size: 12px;
+					margin: 0.5rem 1rem;
+					font-size: 10px;
+					text-align: center;
 					color: $white;
 				}
 
@@ -226,10 +233,15 @@ nav
 					color: $white;
 					border: 2px solid $white;
 					height: 2rem;
-					line-height: 2rem;
+					line-height: 1.85rem;
 					border-radius: 1rem;
-					margin-top: 0.5rem;
+					margin: 0.5rem auto 0 auto;
 				}
+			}
+
+			&:hover .restaurant-details
+			{
+				opacity: 1;
 			}
 		}
 

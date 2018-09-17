@@ -7077,6 +7077,13 @@ nav {
 .main .all-restos {
   margin: 6rem 0;
   text-align: center; }
+  .main .top-spots .btn,
+  .main .all-restos .btn {
+    color: #fff; }
+
+.main .error {
+  text-align: center;
+  color: #888; }
 
 .main .owl-carousel {
   padding: 0 2em; }
@@ -7085,16 +7092,6 @@ nav {
     height: 15rem;
     background-position: 50% 50%;
     background-size: cover; }
-    .main .owl-carousel .item::before {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      opacity: 0.2; }
     .main .owl-carousel .item .restaurant-details {
       position: absolute;
       z-index: 1;
@@ -7109,13 +7106,22 @@ nav {
       -ms-flex-align: center;
           align-items: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: opacity 200ms ease; }
       .main .owl-carousel .item .restaurant-details .restaurant-name {
-        font-size: 24px;
+        margin: 0 1rem;
+        font-size: 22px;
+        line-height: 26px;
+        padding: 0.25rem 0;
         font-weight: bold;
+        text-align: center;
         color: #fff; }
       .main .owl-carousel .item .restaurant-details .restaurant-type {
-        font-size: 12px;
+        margin: 0.5rem 1rem;
+        font-size: 10px;
+        text-align: center;
         color: #fff; }
       .main .owl-carousel .item .restaurant-details .btn {
         font-size: 12px;
@@ -7123,9 +7129,11 @@ nav {
         color: #fff;
         border: 2px solid #fff;
         height: 2rem;
-        line-height: 2rem;
+        line-height: 1.85rem;
         border-radius: 1rem;
-        margin-top: 0.5rem; }
+        margin: 0.5rem auto 0 auto; }
+    .main .owl-carousel .item:hover .restaurant-details {
+      opacity: 1; }
   .main .owl-carousel .owl-nav button {
     background-color: #07b5c4;
     background-repeat: no-repeat;

@@ -1,5 +1,5 @@
-# JSON Side Navigation Demo
+# JSON Carousel Demo
 
-built on [FastShell](https://travis-ci.org/HosseinKarami/fastshell)
+This assumes you have node, npm and gulp installed globally.
 
 To start server: 'gulp'
